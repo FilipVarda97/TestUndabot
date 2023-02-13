@@ -9,19 +9,37 @@
 /* Begin PBXBuildFile section */
 		7D5FA58A299A659D002B5459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA589299A659D002B5459 /* AppDelegate.swift */; };
 		7D5FA58C299A659D002B5459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA58B299A659D002B5459 /* SceneDelegate.swift */; };
-		7D5FA58E299A659D002B5459 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA58D299A659D002B5459 /* ViewController.swift */; };
+		7D5FA58E299A659D002B5459 /* TUSearchRepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA58D299A659D002B5459 /* TUSearchRepoListViewController.swift */; };
 		7D5FA593299A659F002B5459 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D5FA592299A659F002B5459 /* Assets.xcassets */; };
 		7D5FA596299A659F002B5459 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5FA594299A659F002B5459 /* LaunchScreen.storyboard */; };
+		7D5FA5A5299A6B4B002B5459 /* TUService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5A4299A6B4B002B5459 /* TUService.swift */; };
+		7D5FA5A7299A6B55002B5459 /* TURequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5A6299A6B55002B5459 /* TURequest.swift */; };
+		7D5FA5A9299A6B66002B5459 /* TUEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5A8299A6B66002B5459 /* TUEndpoint.swift */; };
+		7D5FA5AB299A6F89002B5459 /* TURepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5AA299A6F89002B5459 /* TURepository.swift */; };
+		7D5FA5AD299A6FB4002B5459 /* TUOwnerUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5AC299A6FB4002B5459 /* TUOwnerUser.swift */; };
+		7D5FA5AF299A6FD9002B5459 /* TURepositoriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5AE299A6FD9002B5459 /* TURepositoriesResponse.swift */; };
+		7D5FA5B1299A7042002B5459 /* TURepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5B0299A7042002B5459 /* TURepositoryListView.swift */; };
+		7D5FA5B6299A70D7002B5459 /* TURepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5B5299A70D7002B5459 /* TURepositoryListTableViewCell.swift */; };
+		7D5FA5B9299A71E9002B5459 /* TURepositroyListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5B8299A71E9002B5459 /* TURepositroyListViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D5FA586299A659D002B5459 /* TestUndabot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestUndabot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5FA589299A659D002B5459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D5FA58B299A659D002B5459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7D5FA58D299A659D002B5459 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D5FA58D299A659D002B5459 /* TUSearchRepoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUSearchRepoListViewController.swift; sourceTree = "<group>"; };
 		7D5FA592299A659F002B5459 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D5FA595299A659F002B5459 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D5FA597299A659F002B5459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D5FA5A4299A6B4B002B5459 /* TUService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUService.swift; sourceTree = "<group>"; };
+		7D5FA5A6299A6B55002B5459 /* TURequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURequest.swift; sourceTree = "<group>"; };
+		7D5FA5A8299A6B66002B5459 /* TUEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUEndpoint.swift; sourceTree = "<group>"; };
+		7D5FA5AA299A6F89002B5459 /* TURepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepository.swift; sourceTree = "<group>"; };
+		7D5FA5AC299A6FB4002B5459 /* TUOwnerUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUOwnerUser.swift; sourceTree = "<group>"; };
+		7D5FA5AE299A6FD9002B5459 /* TURepositoriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositoriesResponse.swift; sourceTree = "<group>"; };
+		7D5FA5B0299A7042002B5459 /* TURepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositoryListView.swift; sourceTree = "<group>"; };
+		7D5FA5B5299A70D7002B5459 /* TURepositoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositoryListTableViewCell.swift; sourceTree = "<group>"; };
+		7D5FA5B8299A71E9002B5459 /* TURepositroyListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositroyListViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +73,11 @@
 			isa = PBXGroup;
 			children = (
 				7D5FA5A2299A65E8002B5459 /* Resources */,
+				7D5FA59D299A65C1002B5459 /* APIClient */,
 				7D5FA5A1299A65DF002B5459 /* Models */,
 				7D5FA5A0299A65CD002B5459 /* ViewModels */,
 				7D5FA59F299A65CB002B5459 /* Views */,
 				7D5FA59E299A65C9002B5459 /* Controllers */,
-				7D5FA59D299A65C1002B5459 /* APIClient */,
 				7D5FA597299A659F002B5459 /* Info.plist */,
 			);
 			path = TestUndabot;
@@ -68,6 +86,9 @@
 		7D5FA59D299A65C1002B5459 /* APIClient */ = {
 			isa = PBXGroup;
 			children = (
+				7D5FA5A4299A6B4B002B5459 /* TUService.swift */,
+				7D5FA5A6299A6B55002B5459 /* TURequest.swift */,
+				7D5FA5A8299A6B66002B5459 /* TUEndpoint.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -75,7 +96,7 @@
 		7D5FA59E299A65C9002B5459 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7D5FA58D299A659D002B5459 /* ViewController.swift */,
+				7D5FA58D299A659D002B5459 /* TUSearchRepoListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -83,6 +104,7 @@
 		7D5FA59F299A65CB002B5459 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D5FA5B3299A70A0002B5459 /* RepositoryListView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -90,6 +112,7 @@
 		7D5FA5A0299A65CD002B5459 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7D5FA5B7299A71B9002B5459 /* RepositoryListView */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -97,6 +120,9 @@
 		7D5FA5A1299A65DF002B5459 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7D5FA5A3299A6B24002B5459 /* Responses */,
+				7D5FA5AA299A6F89002B5459 /* TURepository.swift */,
+				7D5FA5AC299A6FB4002B5459 /* TUOwnerUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -110,6 +136,39 @@
 				7D5FA594299A659F002B5459 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7D5FA5A3299A6B24002B5459 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				7D5FA5AE299A6FD9002B5459 /* TURepositoriesResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		7D5FA5B2299A7092002B5459 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7D5FA5B5299A70D7002B5459 /* TURepositoryListTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7D5FA5B3299A70A0002B5459 /* RepositoryListView */ = {
+			isa = PBXGroup;
+			children = (
+				7D5FA5B2299A7092002B5459 /* Cells */,
+				7D5FA5B0299A7042002B5459 /* TURepositoryListView.swift */,
+			);
+			path = RepositoryListView;
+			sourceTree = "<group>";
+		};
+		7D5FA5B7299A71B9002B5459 /* RepositoryListView */ = {
+			isa = PBXGroup;
+			children = (
+				7D5FA5B8299A71E9002B5459 /* TURepositroyListViewViewModel.swift */,
+			);
+			path = RepositoryListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,9 +241,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D5FA58E299A659D002B5459 /* ViewController.swift in Sources */,
+				7D5FA5B6299A70D7002B5459 /* TURepositoryListTableViewCell.swift in Sources */,
+				7D5FA5A7299A6B55002B5459 /* TURequest.swift in Sources */,
+				7D5FA5A9299A6B66002B5459 /* TUEndpoint.swift in Sources */,
+				7D5FA5A5299A6B4B002B5459 /* TUService.swift in Sources */,
+				7D5FA58E299A659D002B5459 /* TUSearchRepoListViewController.swift in Sources */,
 				7D5FA58A299A659D002B5459 /* AppDelegate.swift in Sources */,
+				7D5FA5B9299A71E9002B5459 /* TURepositroyListViewViewModel.swift in Sources */,
+				7D5FA5AB299A6F89002B5459 /* TURepository.swift in Sources */,
+				7D5FA5AF299A6FD9002B5459 /* TURepositoriesResponse.swift in Sources */,
 				7D5FA58C299A659D002B5459 /* SceneDelegate.swift in Sources */,
+				7D5FA5AD299A6FB4002B5459 /* TUOwnerUser.swift in Sources */,
+				7D5FA5B1299A7042002B5459 /* TURepositoryListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

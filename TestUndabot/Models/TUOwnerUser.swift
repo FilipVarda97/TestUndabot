@@ -1,0 +1,18 @@
+//
+//  TUOwnerUser.swift
+//  TestUndabot
+//
+//  Created by Filip Varda on 13.02.2023..
+//
+
+import Foundation
+
+struct TUOwnerUser: Codable {
+    let name: String
+    let avatarImageString: String
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "login"
+        case avatarImageString = "avatar_url"
+    }
+}
