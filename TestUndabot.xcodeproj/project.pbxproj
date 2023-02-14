@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52F626A68AE4A7A411AA5254 /* Pods_TestUndabot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77D02A10ADDDBEBD07244DF /* Pods_TestUndabot.framework */; };
+		7D3DF7BC299A8B610054CC4C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7BB299A8B610054CC4C /* UIView.swift */; };
+		7D3DF7BE299AA26F0054CC4C /* TUEmptyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7BD299AA26F0054CC4C /* TUEmptyRepository.swift */; };
 		7D5FA58A299A659D002B5459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA589299A659D002B5459 /* AppDelegate.swift */; };
 		7D5FA58C299A659D002B5459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA58B299A659D002B5459 /* SceneDelegate.swift */; };
 		7D5FA58E299A659D002B5459 /* TUSearchRepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA58D299A659D002B5459 /* TUSearchRepoListViewController.swift */; };
@@ -21,9 +24,13 @@
 		7D5FA5B1299A7042002B5459 /* TURepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5B0299A7042002B5459 /* TURepositoryListView.swift */; };
 		7D5FA5B6299A70D7002B5459 /* TURepositoryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5B5299A70D7002B5459 /* TURepositoryListTableViewCell.swift */; };
 		7D5FA5B9299A71E9002B5459 /* TURepositroyListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA5B8299A71E9002B5459 /* TURepositroyListViewViewModel.swift */; };
+		7D959FF1299A7B9B00A0C08F /* TURepositoryListTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D959FF0299A7B9B00A0C08F /* TURepositoryListTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1709530AA044706CF9A68DA3 /* Pods-TestUndabot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestUndabot.debug.xcconfig"; path = "Target Support Files/Pods-TestUndabot/Pods-TestUndabot.debug.xcconfig"; sourceTree = "<group>"; };
+		7D3DF7BB299A8B610054CC4C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		7D3DF7BD299AA26F0054CC4C /* TUEmptyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUEmptyRepository.swift; sourceTree = "<group>"; };
 		7D5FA586299A659D002B5459 /* TestUndabot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestUndabot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5FA589299A659D002B5459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D5FA58B299A659D002B5459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +47,9 @@
 		7D5FA5B0299A7042002B5459 /* TURepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositoryListView.swift; sourceTree = "<group>"; };
 		7D5FA5B5299A70D7002B5459 /* TURepositoryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositoryListTableViewCell.swift; sourceTree = "<group>"; };
 		7D5FA5B8299A71E9002B5459 /* TURepositroyListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositroyListViewViewModel.swift; sourceTree = "<group>"; };
+		7D959FF0299A7B9B00A0C08F /* TURepositoryListTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TURepositoryListTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		98F9B03726A482F7101E731F /* Pods-TestUndabot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestUndabot.release.xcconfig"; path = "Target Support Files/Pods-TestUndabot/Pods-TestUndabot.release.xcconfig"; sourceTree = "<group>"; };
+		C77D02A10ADDDBEBD07244DF /* Pods_TestUndabot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestUndabot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +57,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F626A68AE4A7A411AA5254 /* Pods_TestUndabot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20E34233DB513F9BD9DC7E4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1709530AA044706CF9A68DA3 /* Pods-TestUndabot.debug.xcconfig */,
+				98F9B03726A482F7101E731F /* Pods-TestUndabot.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		36E9C67199942AEFB2E4C72C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C77D02A10ADDDBEBD07244DF /* Pods_TestUndabot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D3DF7BA299A8B4D0054CC4C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7D3DF7BB299A8B610054CC4C /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7D5FA57D299A659D002B5459 = {
 			isa = PBXGroup;
 			children = (
 				7D5FA588299A659D002B5459 /* TestUndabot */,
 				7D5FA587299A659D002B5459 /* Products */,
+				20E34233DB513F9BD9DC7E4D /* Pods */,
+				36E9C67199942AEFB2E4C72C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +110,7 @@
 		7D5FA588299A659D002B5459 /* TestUndabot */ = {
 			isa = PBXGroup;
 			children = (
+				7D3DF7BA299A8B4D0054CC4C /* Extensions */,
 				7D5FA5A2299A65E8002B5459 /* Resources */,
 				7D5FA59D299A65C1002B5459 /* APIClient */,
 				7D5FA5A1299A65DF002B5459 /* Models */,
@@ -159,6 +198,7 @@
 			children = (
 				7D5FA5B2299A7092002B5459 /* Cells */,
 				7D5FA5B0299A7042002B5459 /* TURepositoryListView.swift */,
+				7D3DF7BD299AA26F0054CC4C /* TUEmptyRepository.swift */,
 			);
 			path = RepositoryListView;
 			sourceTree = "<group>";
@@ -167,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				7D5FA5B8299A71E9002B5459 /* TURepositroyListViewViewModel.swift */,
+				7D959FF0299A7B9B00A0C08F /* TURepositoryListTableViewCellViewModel.swift */,
 			);
 			path = RepositoryListView;
 			sourceTree = "<group>";
@@ -178,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D5FA59A299A659F002B5459 /* Build configuration list for PBXNativeTarget "TestUndabot" */;
 			buildPhases = (
+				110647E254645380CB39C31F /* [CP] Check Pods Manifest.lock */,
 				7D5FA582299A659D002B5459 /* Sources */,
 				7D5FA583299A659D002B5459 /* Frameworks */,
 				7D5FA584299A659D002B5459 /* Resources */,
+				57F9256A0847EABD27842A6C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +279,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		110647E254645380CB39C31F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestUndabot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57F9256A0847EABD27842A6C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestUndabot/Pods-TestUndabot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestUndabot/Pods-TestUndabot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestUndabot/Pods-TestUndabot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7D5FA582299A659D002B5459 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -246,10 +331,13 @@
 				7D5FA5A9299A6B66002B5459 /* TUEndpoint.swift in Sources */,
 				7D5FA5A5299A6B4B002B5459 /* TUService.swift in Sources */,
 				7D5FA58E299A659D002B5459 /* TUSearchRepoListViewController.swift in Sources */,
+				7D3DF7BE299AA26F0054CC4C /* TUEmptyRepository.swift in Sources */,
 				7D5FA58A299A659D002B5459 /* AppDelegate.swift in Sources */,
 				7D5FA5B9299A71E9002B5459 /* TURepositroyListViewViewModel.swift in Sources */,
 				7D5FA5AB299A6F89002B5459 /* TURepository.swift in Sources */,
+				7D959FF1299A7B9B00A0C08F /* TURepositoryListTableViewCellViewModel.swift in Sources */,
 				7D5FA5AF299A6FD9002B5459 /* TURepositoriesResponse.swift in Sources */,
+				7D3DF7BC299A8B610054CC4C /* UIView.swift in Sources */,
 				7D5FA58C299A659D002B5459 /* SceneDelegate.swift in Sources */,
 				7D5FA5AD299A6FB4002B5459 /* TUOwnerUser.swift in Sources */,
 				7D5FA5B1299A7042002B5459 /* TURepositoryListView.swift in Sources */,
@@ -386,6 +474,7 @@
 		};
 		7D5FA59B299A659F002B5459 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1709530AA044706CF9A68DA3 /* Pods-TestUndabot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -413,6 +502,7 @@
 		};
 		7D5FA59C299A659F002B5459 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98F9B03726A482F7101E731F /* Pods-TestUndabot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -109,9 +109,3 @@ final class TURequest {
         return nil
     }
 }
-
-// MARK: - Extensions
-/// Provides a simple naming for requests
-extension TUEndpoint {
-    static let listInitialrepositories = TURequest(enpoint: .initialRepositorySearch)
-}
