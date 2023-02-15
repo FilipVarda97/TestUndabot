@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		52F626A68AE4A7A411AA5254 /* Pods_TestUndabot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77D02A10ADDDBEBD07244DF /* Pods_TestUndabot.framework */; };
 		7D3DF7BC299A8B610054CC4C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7BB299A8B610054CC4C /* UIView.swift */; };
-		7D3DF7BE299AA26F0054CC4C /* TUEmptyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7BD299AA26F0054CC4C /* TUEmptyRepository.swift */; };
+		7D3DF7BE299AA26F0054CC4C /* TUEmptyTableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7BD299AA26F0054CC4C /* TUEmptyTableViewBackground.swift */; };
+		7D3DF7C0299BE2D50054CC4C /* TUUserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7BF299BE2D50054CC4C /* TUUserDetailsViewController.swift */; };
+		7D3DF7C3299BE3E20054CC4C /* TUUserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7C2299BE3E20054CC4C /* TUUserDetailsViewModel.swift */; };
+		7D3DF7C5299BE5600054CC4C /* TUUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3DF7C4299BE5600054CC4C /* TUUser.swift */; };
 		7D5FA58A299A659D002B5459 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA589299A659D002B5459 /* AppDelegate.swift */; };
 		7D5FA58C299A659D002B5459 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA58B299A659D002B5459 /* SceneDelegate.swift */; };
 		7D5FA58E299A659D002B5459 /* TUSearchRepoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FA58D299A659D002B5459 /* TUSearchRepoListViewController.swift */; };
@@ -30,7 +33,10 @@
 /* Begin PBXFileReference section */
 		1709530AA044706CF9A68DA3 /* Pods-TestUndabot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestUndabot.debug.xcconfig"; path = "Target Support Files/Pods-TestUndabot/Pods-TestUndabot.debug.xcconfig"; sourceTree = "<group>"; };
 		7D3DF7BB299A8B610054CC4C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		7D3DF7BD299AA26F0054CC4C /* TUEmptyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUEmptyRepository.swift; sourceTree = "<group>"; };
+		7D3DF7BD299AA26F0054CC4C /* TUEmptyTableViewBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUEmptyTableViewBackground.swift; sourceTree = "<group>"; };
+		7D3DF7BF299BE2D50054CC4C /* TUUserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUUserDetailsViewController.swift; sourceTree = "<group>"; };
+		7D3DF7C2299BE3E20054CC4C /* TUUserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUUserDetailsViewModel.swift; sourceTree = "<group>"; };
+		7D3DF7C4299BE5600054CC4C /* TUUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TUUser.swift; sourceTree = "<group>"; };
 		7D5FA586299A659D002B5459 /* TestUndabot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestUndabot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5FA589299A659D002B5459 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7D5FA58B299A659D002B5459 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +95,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7D3DF7C1299BE3BF0054CC4C /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7D3DF7C2299BE3E20054CC4C /* TUUserDetailsViewModel.swift */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		7D3DF7C8299C64C20054CC4C /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				7D3DF7BD299AA26F0054CC4C /* TUEmptyTableViewBackground.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
 		7D5FA57D299A659D002B5459 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				7D5FA58D299A659D002B5459 /* TUSearchRepoListViewController.swift */,
+				7D3DF7BF299BE2D50054CC4C /* TUUserDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -143,6 +166,7 @@
 		7D5FA59F299A65CB002B5459 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D3DF7C8299C64C20054CC4C /* Reusable */,
 				7D5FA5B3299A70A0002B5459 /* RepositoryListView */,
 			);
 			path = Views;
@@ -151,6 +175,7 @@
 		7D5FA5A0299A65CD002B5459 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7D3DF7C1299BE3BF0054CC4C /* UserDetails */,
 				7D5FA5B7299A71B9002B5459 /* RepositoryListView */,
 			);
 			path = ViewModels;
@@ -162,6 +187,7 @@
 				7D5FA5A3299A6B24002B5459 /* Responses */,
 				7D5FA5AA299A6F89002B5459 /* TURepository.swift */,
 				7D5FA5AC299A6FB4002B5459 /* TUOwnerUser.swift */,
+				7D3DF7C4299BE5600054CC4C /* TUUser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,7 +224,6 @@
 			children = (
 				7D5FA5B2299A7092002B5459 /* Cells */,
 				7D5FA5B0299A7042002B5459 /* TURepositoryListView.swift */,
-				7D3DF7BD299AA26F0054CC4C /* TUEmptyRepository.swift */,
 			);
 			path = RepositoryListView;
 			sourceTree = "<group>";
@@ -330,13 +355,16 @@
 				7D5FA5A7299A6B55002B5459 /* TURequest.swift in Sources */,
 				7D5FA5A9299A6B66002B5459 /* TUEndpoint.swift in Sources */,
 				7D5FA5A5299A6B4B002B5459 /* TUService.swift in Sources */,
+				7D3DF7C3299BE3E20054CC4C /* TUUserDetailsViewModel.swift in Sources */,
 				7D5FA58E299A659D002B5459 /* TUSearchRepoListViewController.swift in Sources */,
-				7D3DF7BE299AA26F0054CC4C /* TUEmptyRepository.swift in Sources */,
+				7D3DF7BE299AA26F0054CC4C /* TUEmptyTableViewBackground.swift in Sources */,
 				7D5FA58A299A659D002B5459 /* AppDelegate.swift in Sources */,
 				7D5FA5B9299A71E9002B5459 /* TURepositroyListViewViewModel.swift in Sources */,
 				7D5FA5AB299A6F89002B5459 /* TURepository.swift in Sources */,
 				7D959FF1299A7B9B00A0C08F /* TURepositoryListTableViewCellViewModel.swift in Sources */,
+				7D3DF7C5299BE5600054CC4C /* TUUser.swift in Sources */,
 				7D5FA5AF299A6FD9002B5459 /* TURepositoriesResponse.swift in Sources */,
+				7D3DF7C0299BE2D50054CC4C /* TUUserDetailsViewController.swift in Sources */,
 				7D3DF7BC299A8B610054CC4C /* UIView.swift in Sources */,
 				7D5FA58C299A659D002B5459 /* SceneDelegate.swift in Sources */,
 				7D5FA5AD299A6FB4002B5459 /* TUOwnerUser.swift in Sources */,

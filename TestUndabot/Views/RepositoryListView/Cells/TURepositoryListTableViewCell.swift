@@ -14,6 +14,7 @@ protocol TURepositoryListTableViewCellDelegate: AnyObject {
 }
 
 /// A table view cell that represents a repository item in a TURepositoryListView.
+/// Press on image opens user details, press on text open repo details.
 class TURepositoryListTableViewCell: UITableViewCell {
     static let identifier = "TURepositoryListTableViewCell"
     weak var delegate: TURepositoryListTableViewCellDelegate?
@@ -59,6 +60,12 @@ class TURepositoryListTableViewCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    private let numberOfStarsLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12, weight: .light)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     private let authorAvatarImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
@@ -89,7 +96,8 @@ class TURepositoryListTableViewCell: UITableViewCell {
                                       authorNameLabel,
                                       numberOfForksLabel,
                                       numberOfIssuesLabel,
-                                      numberOfWatchersLabel)
+                                      numberOfWatchersLabel,
+                                      numberOfStarsLabel)
 
         let tapImage = UITapGestureRecognizer(target: self, action: #selector(openUserDetails))
         let tapText = UITapGestureRecognizer(target: self, action: #selector(openRepositoryDetails))
@@ -136,6 +144,10 @@ class TURepositoryListTableViewCell: UITableViewCell {
             make.top.equalTo(numberOfWatchersLabel.snp.bottom).offset(2)
             make.left.equalTo(authorAvatarImageView.snp.right).offset(10)
         }
+        numberOfStarsLabel.snp.makeConstraints { make in
+            make.top.equalTo(numberOfForksLabel.snp.bottom).offset(2)
+            make.left.equalTo(numberOfIssuesLabel.snp.right).offset(10)
+        }
     }
 
     public func configure(with viewModel: TURepositoryListTableViewCellViewModel) {
@@ -145,6 +157,7 @@ class TURepositoryListTableViewCell: UITableViewCell {
         numberOfWatchersLabel.text = viewModel.watchersCountText
         numberOfForksLabel.text = viewModel.forksCountText
         numberOfIssuesLabel.text = viewModel.issuesCountText
+        numberOfStarsLabel.text = viewModel.starsCountText
 
         let placeholder = UIImage(systemName: "person.fill")
         authorAvatarImageView.kf.setImage(with: viewModel.avatarURL,

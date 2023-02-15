@@ -10,9 +10,7 @@ import Foundation
 final class TURepositoryListTableViewCellViewModel {
     private let repository: TURepository
     
-    private var repositoryImageUrl: URL? {
-        return URL(string: repository.ownerUser.avatarImageString)
-    }
+    // MARK: - Public calculated properties
     public var id: Int {
         return repository.id
     }
@@ -25,6 +23,15 @@ final class TURepositoryListTableViewCellViewModel {
     public var authorName: String {
         return repository.ownerUser.name
     }
+    public var userUrl: String {
+        return repository.ownerUser.userUrl
+    }
+    public var repositoryUrl: String {
+        return repository.repositoryUrl
+    }
+    public var starsCountText: String {
+        return "Stars: \(repository.stargazersCount)"
+    }
     public var watchersCountText: String {
         return "Watchers: \(repository.watchersCount)"
     }
@@ -34,13 +41,8 @@ final class TURepositoryListTableViewCellViewModel {
     public var issuesCountText: String {
         return "Open issues: \(repository.openIssuesCount)"
     }
-    public var userUrl: String {
-        return repository.ownerUser.userUrl
-    }
-    public var repositoryUrl: String {
-        return repository.repositoryUrl
-    }
 
+    // MARK: - Init
     init(repository: TURepository) {
         self.repository = repository
     }

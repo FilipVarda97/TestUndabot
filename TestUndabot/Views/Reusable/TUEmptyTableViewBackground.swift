@@ -1,5 +1,5 @@
 //
-//  TUEmptyRepository.swift
+//  TUEmptyTableViewBackground.swift
 //  TestUndabot
 //
 //  Created by Filip Varda on 13.02.2023..
@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class TUEmptyRepositoryView: UIView {
+/// Background view of UITableView. Can init with custom message or default "No data?".
+final class TUEmptyTableViewBackground: UIView {
+    private var message: String = "Something went wrong...\nCheck spelling."
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 25, weight: .bold)
@@ -16,7 +18,6 @@ final class TUEmptyRepositoryView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private var message: String?
     
     // MARK: - Init
     override init(frame: CGRect) {

@@ -8,10 +8,11 @@
 import UIKit
 import SnapKit
 
-/// Initial controller for the app. This controller presents list of repositories and has the ability to search for repositories with provided name.
+/// Initial controller for the app. This controller presents TURepositoryListView which supports searching for repos and sorting them.
 final class TUSearchRepoListViewController: UIViewController {
     private let repoListView = TURepositoryListView(frame: .zero)
     
+    // MARK: - Implementation
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Repositories"
@@ -28,14 +29,15 @@ final class TUSearchRepoListViewController: UIViewController {
     }
 }
 
+// MARK: - TURepositoryListViewDelegate
 extension TUSearchRepoListViewController: TURepositoryListViewDelegate {
     func repositoryListView(_ listView: TURepositoryListView, didSelectUserWith url: String) {
-        print(url)
-        // TODO: Open user details
+        let viewModel = TUUserDetailsViewModel(userUrl: url)
+        let vc = TUUserDetailsViewController(viewModel: viewModel)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func repositoryListView(_ listView: TURepositoryListView, didSelectRepositoryWith url: String) {
-        print(url)
         // TODO: Open repo details
     }
 }

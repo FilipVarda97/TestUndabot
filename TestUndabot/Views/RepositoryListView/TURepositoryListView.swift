@@ -13,18 +13,18 @@ protocol TURepositoryListViewDelegate: AnyObject {
     func repositoryListView(_ listView: TURepositoryListView, didSelectRepositoryWith url: String)
 }
 
-/// A view holding a table view that presents cells with repo info.
+/// A view holding a table view that presents cells with repository information, and UISearchController with it's ScopeButtons.
 final class TURepositoryListView: UIView {
     private let viewModel = TURepositroyListViewViewModel()
-    public let sortButton = UIBarButtonItem()
     weak var delegate: TURepositoryListViewDelegate?
-    
+
     public let searchController: UISearchController = {
         let searchController = UISearchController()
         searchController.searchBar.placeholder = "Repository name"
+        searchController.searchBar.showsScopeBar = true
+        searchController.searchBar.scopeButtonTitles = ["Stars", "Forks", "Updated"]
         return searchController
     }()
-    
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(TURepositoryListTableViewCell.self,
@@ -42,9 +42,9 @@ final class TURepositoryListView: UIView {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setUpView()
+        setUpViews()
         setUpConstraints()
-        setUpTableView()
+        configureView()
     }
 
     required init?(coder: NSCoder) {
@@ -52,7 +52,7 @@ final class TURepositoryListView: UIView {
     }
 
     // MARK: - Implementation
-    private func setUpView() {
+    private func setUpViews() {
         addSubviews(tableView, spinner)
     }
     
@@ -65,7 +65,7 @@ final class TURepositoryListView: UIView {
         }
     }
         
-    private func setUpTableView() {
+    private func configureView() {
         viewModel.delegate = self
         searchController.searchResultsUpdater = viewModel
         searchController.searchBar.delegate = viewModel
@@ -76,35 +76,27 @@ final class TURepositoryListView: UIView {
 
 // MARK: - TURepositroyListViewViewModelDelegate
 extension TURepositoryListView: TURepositroyListViewViewModelDelegate {
-    func beginLoadingRepositories() {
-        spinner.startAnimating()
-        tableView.backgroundView = nil
-    }
-
-    func didLoadSearchRepositories() {
-        spinner.stopAnimating()
-        tableView.reloadData()
-        UIView.animate(withDuration: 0.5) {
-            self.tableView.alpha = 1
-        }
-    }
-    
-    func failedToLoadSearchRepositories() {
-        spinner.stopAnimating()
-        tableView.reloadData()
-        tableView.backgroundView = TUEmptyRepositoryView(message: "Something went wrong. Make sure the naming is correct.")
-    }
-    
-    func resetView() {
-        spinner.stopAnimating()
-        tableView.reloadData()
-    }
-
     func openUserDetails(userUrl: String) {
         delegate?.repositoryListView(self, didSelectUserWith: userUrl)
     }
     
     func openRepositoryDetails(repositoryUrl: String) {
         delegate?.repositoryListView(self, didSelectRepositoryWith: repositoryUrl)
+    }
+    
+    func beginLoadingRepositories() {
+        spinner.startAnimating()
+        tableView.backgroundView = nil
+    }
+    
+    func failedToLoadSearchRepositories() {
+        spinner.stopAnimating()
+        tableView.reloadData()
+        tableView.backgroundView = TUEmptyTableViewBackground()
+    }
+
+    func finishedLoadingOrSortingRepositories() {
+        spinner.stopAnimating()
+        tableView.reloadData()
     }
 }

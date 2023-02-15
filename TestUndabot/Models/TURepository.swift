@@ -15,6 +15,8 @@ struct TURepository: Codable {
     let forksCount: Int
     let openIssuesCount: Int
     let repositoryUrl: String
+    let updatedAt: String
+    let stargazersCount: Int
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -23,5 +25,7 @@ struct TURepository: Codable {
         case forksCount = "forks_count"
         case openIssuesCount = "open_issues_count"
         case repositoryUrl = "url"
+        case updatedAt = "updated_at"
+        case stargazersCount = "stargazers_count"
     }
 }
