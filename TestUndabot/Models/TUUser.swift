@@ -16,7 +16,7 @@ struct TUUser: Codable {
     let location: String?
     let name: String?
     let followers: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case login = "login"
         case avatarImageString = "avatar_url"

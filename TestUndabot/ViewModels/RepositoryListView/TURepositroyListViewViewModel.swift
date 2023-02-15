@@ -20,28 +20,28 @@ protocol TURepositroyListViewViewModelDelegate: AnyObject {
 final class TURepositroyListViewViewModel: NSObject {
     private var isLoadingSearchRepositories = false
     private var shouldInitialScreenPresent = true
-    
+
     public weak var delegate: TURepositroyListViewViewModelDelegate?
     private var cellViewModels: [TURepositoryListTableViewCellViewModel] = []
-    
+
     enum SortType {
         case stars
         case forks
         case updated
     }
-    
+
     private var sortType: SortType = .stars {
         didSet {
             sortRepositories()
         }
     }
-    
+
     private var repositories: [TURepository] = [] {
         didSet {
             sortRepositories()
         }
     }
-    
+
     private var sortedRepositories: [TURepository] = [] {
         didSet {
             cellViewModels.removeAll()
@@ -51,7 +51,7 @@ final class TURepositroyListViewViewModel: NSObject {
             }
         }
     }
-    
+
     // MARK: - Implementation
     private func fetchRepositories(with name: String) {
         let queryParams = [
@@ -73,14 +73,14 @@ final class TURepositroyListViewViewModel: NSObject {
                             self?.repositories.removeAll()
                             self?.delegate?.failedToLoadSearchRepositories()
                         }
-                    case .failure(_):
+                    case .failure:
                         self?.delegate?.failedToLoadSearchRepositories()
                     }
                 }
             }
         }
     }
-    
+
     private func sortRepositories() {
         switch sortType {
         case .stars:
@@ -97,7 +97,7 @@ final class TURepositroyListViewViewModel: NSObject {
                 return firstDate > secondDate
             }
             // MARK: [TEST] - Uncomment to print sorted array of dates since "TURepository.updatedAt" is not preseneted on UI.
-            //print(sortedRepositories.compactMap { return $0.updatedAt })
+            // print(sortedRepositories.compactMap { return $0.updatedAt })
         }
         delegate?.finishedLoadingOrSortingRepositories()
     }
@@ -113,7 +113,7 @@ extension TURepositroyListViewViewModel: UITableViewDelegate, UITableViewDataSou
         tableView.backgroundView = nil
         return cellViewModels.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TURepositoryListTableViewCell.identifier) as? TURepositoryListTableViewCell else {
             return UITableViewCell()
@@ -122,7 +122,7 @@ extension TURepositroyListViewViewModel: UITableViewDelegate, UITableViewDataSou
         cell.configure(with: cellViewModels[indexPath.row])
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
@@ -131,17 +131,17 @@ extension TURepositroyListViewViewModel: UITableViewDelegate, UITableViewDataSou
 // MARK: - UISearchResultsUpdating, UISearchBarDelegate
 extension TURepositroyListViewViewModel: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {}
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let name = searchBar.text, !name.isEmpty else { return }
         fetchRepositories(with: name)
     }
-    
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         shouldInitialScreenPresent = true
         repositories.removeAll()
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         switch selectedScope {
         case 0:
@@ -161,7 +161,7 @@ extension TURepositroyListViewViewModel: TURepositoryListTableViewCellDelegate {
     func openUserDetailsWith(url: String) {
         delegate?.openUserDetails(userUrl: url)
     }
-    
+
     func openRepositoryDetails(url: String) {
         delegate?.openRepositoryDetails(repositoryUrl: url)
     }

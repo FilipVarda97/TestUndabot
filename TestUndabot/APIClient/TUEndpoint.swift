@@ -7,7 +7,7 @@
 
 import Foundation
 
-///Enpoints for TURequest. Return string coresponding to enpoint
+/// Enpoints for TURequest. Return string coresponding to enpoint
 enum TUEndpoint: String {
     case searchRepositories = "search/repositories"
     case users

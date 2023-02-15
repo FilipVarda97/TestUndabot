@@ -9,11 +9,12 @@ import Foundation
 
 final class TUImageLoader {
     static let shared = TUImageLoader()
-    
     private var dataCache = NSCache<NSString, NSData>()
-    
+
+    // MARK: - Init
     private init() {}
-    
+
+    // MARK: - Implementation
     public func dowloadImage(url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         let key = url.absoluteString as NSString
         if let data = dataCache.object(forKey: key) as? Data {

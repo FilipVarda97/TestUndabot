@@ -19,7 +19,7 @@ class TURepositoryListTableViewCell: UITableViewCell {
     static let identifier = "TURepositoryListTableViewCell"
     weak var delegate: TURepositoryListTableViewCellDelegate?
     private var viewModel: TURepositoryListTableViewCellViewModel?
-    
+
     private let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -79,19 +79,18 @@ class TURepositoryListTableViewCell: UITableViewCell {
         setUpViews()
         setUpConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("Unsupported")
     }
 
     override func layoutSubviews() {}
-    
+
     // MARK: - Implementation
     private func setUpViews() {
         contentView.addSubview(containerView)
         containerView.addSubviews(authorAvatarImageView,
                                   textContainerView)
-        
         textContainerView.addSubviews(repositoryNameLabel,
                                       authorNameLabel,
                                       numberOfForksLabel,
@@ -106,7 +105,7 @@ class TURepositoryListTableViewCell: UITableViewCell {
         textContainerView.addGestureRecognizer(tapText)
         textContainerView.isUserInteractionEnabled = true
     }
-    
+
     private func setUpConstraints() {
         containerView.backgroundColor = .systemCyan.withAlphaComponent(0.4)
         containerView.layer.cornerRadius = 20
@@ -134,7 +133,6 @@ class TURepositoryListTableViewCell: UITableViewCell {
         numberOfWatchersLabel.snp.makeConstraints { make in
             make.top.equalTo(authorNameLabel.snp.bottom).offset(5)
             make.left.equalTo(authorAvatarImageView.snp.right).offset(10)
-            
         }
         numberOfForksLabel.snp.makeConstraints { make in
             make.top.equalTo(numberOfWatchersLabel.snp.top)
@@ -164,7 +162,7 @@ class TURepositoryListTableViewCell: UITableViewCell {
                                           placeholder: placeholder,
                                           options: [.transition(.flipFromLeft(0.2))])
     }
-    
+
     // MARK: - Actions
     @objc private func openUserDetails() {
         guard let url = viewModel?.userUrl else { return }

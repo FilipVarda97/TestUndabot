@@ -4,13 +4,14 @@
 //
 //  Created by Filip Varda on 15.02.2023..
 //
+// swiftlint:disable type_name
 
 import UIKit
 
 /// A viewModel responsible for calculation presentable values and createing an URL form url.
 final class TUUserDetailsGitCollectionViewCellViewModel {
     private var url: String
-    
+
     // MARK: - Public Computed properties
     public var title: String {
         return "Git profile"
@@ -24,7 +25,7 @@ final class TUUserDetailsGitCollectionViewCellViewModel {
     public var urlString: String {
         return url
     }
-    
+
     // MARK: - Init
     init(url: String) {
         self.url = url

@@ -56,7 +56,7 @@ final class TURepositoryListView: UIView {
     private func setUpViews() {
         addSubviews(tableView, spinner)
     }
-    
+
     private func setUpConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -65,7 +65,7 @@ final class TURepositoryListView: UIView {
             make.centerY.centerX.equalToSuperview()
         }
     }
-        
+
     private func configureView() {
         viewModel.delegate = self
         searchController.searchResultsUpdater = viewModel
@@ -80,16 +80,16 @@ extension TURepositoryListView: TURepositroyListViewViewModelDelegate {
     func openUserDetails(userUrl: String) {
         delegate?.repositoryListView(self, didSelectUserWith: userUrl)
     }
-    
+
     func openRepositoryDetails(repositoryUrl: String) {
         delegate?.repositoryListView(self, didSelectRepositoryWith: repositoryUrl)
     }
-    
+
     func beginLoadingRepositories() {
         spinner.startAnimating()
         tableView.backgroundView = nil
     }
-    
+
     func failedToLoadSearchRepositories() {
         spinner.stopAnimating()
         tableView.reloadData()

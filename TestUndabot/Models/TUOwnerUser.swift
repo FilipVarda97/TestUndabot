@@ -11,7 +11,7 @@ struct TUOwnerUser: Codable {
     let name: String
     let avatarImageString: String
     let userUrl: String
-    
+
     enum CodingKeys: String, CodingKey {
         case name = "login"
         case avatarImageString = "avatar_url"

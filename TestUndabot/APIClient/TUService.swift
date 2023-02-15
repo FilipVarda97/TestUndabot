@@ -10,8 +10,6 @@ import Foundation
 /// Service that can make a API call if provided with TURequest object
 final class TUService {
     static let shared = TUService()
-    
-    private init() {}
 
     /// An enum with coresponding errors for simpler error handling and naming
     enum TUServiceError: Error {
@@ -20,6 +18,10 @@ final class TUService {
         case failedToDecodeData
     }
 
+    // MARK: - Init
+    private init() {}
+
+    // MARK: - Implementation
     /// Creating request with provided params
     private func requestFrom(_ tuRequest: TURequest) -> URLRequest? {
         guard let url = tuRequest.url else { return nil }
@@ -27,7 +29,7 @@ final class TUService {
         urlRequest.httpMethod = tuRequest.httpMethod
         return urlRequest
     }
-    
+
     /// Executing the request.
     /// Parameter T is generic type that has to comfort to Codable protocol.
     public func execute<T: Codable>(_ request: TURequest,

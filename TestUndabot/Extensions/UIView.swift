@@ -22,8 +22,7 @@ extension UIView {
         case topLeftToBottomRight
         case bottomLeftToTopRight
     }
-    
-    
+
     func addGradientWithColors(colors: [UIColor], alpha: Float = 1, direction: Direction = .topToBottom) {
         let gradient = CAGradientLayer()
         gradient.frame = self.bounds

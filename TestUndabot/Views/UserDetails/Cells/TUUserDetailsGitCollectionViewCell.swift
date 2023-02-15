@@ -53,11 +53,11 @@ final class TUUserDetailsGitCollectionViewCell: UICollectionViewCell {
         setUpConstraints()
         setUpLayer()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("Unsupported")
     }
-    
+
     // MARK: - Implementation
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -99,14 +99,13 @@ final class TUUserDetailsGitCollectionViewCell: UICollectionViewCell {
             make.left.bottom.right.equalTo(containerView)
         }
     }
-    
+
     private func setUpLayer() {
         contentView.layer.shadowColor = UIColor.label.cgColor
         contentView.layer.shadowRadius = 4
         contentView.layer.shadowOffset = CGSize(width: -6, height: 6)
         contentView.layer.shadowOpacity = 0.3
     }
-
 
     public func configure(with viewModel: TUUserDetailsGitCollectionViewCellViewModel) {
         titleLabel.text = viewModel.title

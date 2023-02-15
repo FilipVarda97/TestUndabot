@@ -17,7 +17,7 @@ protocol TUUserDetailViewDelegate: AnyObject {
 final class TUUserDetailView: UIView {
     weak var delegate: TUUserDetailViewDelegate?
     private var viewModel: TUUserDetailsViewModel
-    
+
     private var collectionView: UICollectionView?
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView()
@@ -26,7 +26,7 @@ final class TUUserDetailView: UIView {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         return spinner
     }()
-    
+
     // MARK: - Init
     init(frame: CGRect, viewModel: TUUserDetailsViewModel) {
         self.viewModel = viewModel
@@ -69,18 +69,15 @@ final class TUUserDetailView: UIView {
         }
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-
         collectionView.register(TUUserDetailPhotoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: TUUserDetailPhotoCollectionViewCell.identifier)
         collectionView.register(TUUserDetailsInfoCollectionViewCell.self,
                                 forCellWithReuseIdentifier: TUUserDetailsInfoCollectionViewCell.identifier)
         collectionView.register(TUUserDetailsGitCollectionViewCell.self,
                                 forCellWithReuseIdentifier: TUUserDetailsGitCollectionViewCell.identifier)
-
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
         collectionView.isHidden = true
-
         return collectionView
     }
 
@@ -102,7 +99,7 @@ extension TUUserDetailView: TUUserDetailsViewModelDelegate {
         collectionView?.backgroundView = nil
         spinner.startAnimating()
     }
-    
+
     func didLoadUser() {
         spinner.stopAnimating()
         collectionView?.backgroundView = nil

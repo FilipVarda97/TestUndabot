@@ -9,7 +9,7 @@ import Foundation
 
 final class TURepositoryListTableViewCellViewModel {
     private let repository: TURepository
-    
+
     // MARK: - Public calculated properties
     public var id: Int {
         return repository.id

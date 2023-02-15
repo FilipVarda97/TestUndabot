@@ -21,29 +21,29 @@ final class TUUserDetailsViewModel: NSObject {
         case information(viewModels: [TUUserDetailsInfoCollectionViewCellViewModel])
         case userGitUrl(viewModel: TUUserDetailsGitCollectionViewCellViewModel)
     }
-    
+
     weak var delegate: TUUserDetailsViewModelDelegate?
     public var sections: [SectionType] = []
     private var userUrl: String?
 
-    private var user: TUUser? = nil {
+    private var user: TUUser? {
         didSet {
             setUpSections()
         }
     }
-    
+
     // MARK: - Init
     override init() {
         super.init()
         self.userUrl = nil
     }
-    
+
     convenience init(userUrl: String) {
         self.init()
         self.userUrl = userUrl
         fetchUser()
     }
-    
+
     // MARK: - Implementation
     private func fetchUser() {
         guard let urlString = userUrl,
@@ -57,14 +57,14 @@ final class TUUserDetailsViewModel: NSObject {
                     self?.user = user
                     self?.delegate?.didLoadUser()
                 }
-            case .failure(_):
+            case .failure:
                 DispatchQueue.main.async {
                     self?.delegate?.failedToLoadUser()
                 }
             }
         }
     }
-    
+
     private func setUpSections() {
         guard let user = user else { return }
         sections = [
@@ -92,7 +92,6 @@ extension TUUserDetailsViewModel {
             )
         )
         item.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0)
-        
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
@@ -100,12 +99,10 @@ extension TUUserDetailsViewModel {
             ),
             subitems: [item]
         )
-        
         let section = NSCollectionLayoutSection(group: group)
-        
         return section
     }
-    
+
     public func createInfoSection() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(
@@ -114,7 +111,6 @@ extension TUUserDetailsViewModel {
             )
         )
         item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
@@ -122,7 +118,6 @@ extension TUUserDetailsViewModel {
             ),
             subitems: [item, item]
         )
-        
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
@@ -135,7 +130,6 @@ extension TUUserDetailsViewModel {
             )
         )
         item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-        
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
@@ -143,9 +137,7 @@ extension TUUserDetailsViewModel {
             ),
             subitems: [item]
         )
-        
         let section = NSCollectionLayoutSection(group: group)
-        
         return section
     }
 }
@@ -155,7 +147,7 @@ extension TUUserDetailsViewModel: UICollectionViewDelegate, UICollectionViewData
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let sectionType = sections[section]
         switch sectionType {
@@ -165,7 +157,7 @@ extension TUUserDetailsViewModel: UICollectionViewDelegate, UICollectionViewData
             return viewModels.count
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = sections[indexPath.section]
         switch section {
@@ -192,7 +184,7 @@ extension TUUserDetailsViewModel: UICollectionViewDelegate, UICollectionViewData
             return cell
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let sectionType = sections[indexPath.section]

@@ -4,6 +4,7 @@
 //
 //  Created by Filip Varda on 15.02.2023..
 //
+// swiftlint:disable type_name
 
 import UIKit
 
@@ -33,7 +34,7 @@ final class TUUserDetailsInfoCollectionViewCellViewModel {
                 return "Followers"
             }
         }
-        
+
         var icon: UIImage? {
             switch self {
             case .name:
@@ -54,12 +55,12 @@ final class TUUserDetailsInfoCollectionViewCellViewModel {
 
     private let type: `Type`
     private var value: String
-    
+
     // MARK: - Public Computed properties
     public var title: String {
         return type.title
     }
-    
+
     public var iconImage: UIImage? {
         return type.icon
     }
@@ -70,7 +71,7 @@ final class TUUserDetailsInfoCollectionViewCellViewModel {
         }
         return value
     }
-    
+
     // MARK: - Init
     init(type: `Type`,  value: String) {
         self.type = type

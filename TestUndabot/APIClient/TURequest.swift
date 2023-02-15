@@ -10,19 +10,18 @@ import Foundation
 
 /// Request object that is created with Enpoint, Path Components and Query Parametars
 final class TURequest {
-    
     private struct Constants {
         static let baseUrl = "https://api.github.com"
     }
-    
+
     /// Endpoint returns string to create URL from baseUrl
     /// (Example: "https://api.github.com/search/repositories")
     private let endpoint: TUEndpoint
-    
+
     /// Path components contains strings to add to "baseUrl  + enpoint"
     /// Example: "https://rickandmortyapi.com/api/users/mojombo
     private var pathComponents: [String]
-    
+
     /// QueryParams contains name and values of params to add to" baseUrl  + enpoint" or "baseUrl + enpoint + pathComponents"
     /// Example: "https://api.github.com/search/repositories?q=tetris&sort=stars&order=desc")
     private var queryParams: [URLQueryItem]

@@ -10,7 +10,7 @@ import UIKit
 /// A cell for TUUserDetailView. Hold a name of displayed value with cooresponding icon and the value itself.
 final class TUUserDetailsInfoCollectionViewCell: UICollectionViewCell {
     static let identifier = "TUUserDetailsInfoCollectionViewCell"
-    
+
     private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray4
@@ -46,7 +46,7 @@ final class TUUserDetailsInfoCollectionViewCell: UICollectionViewCell {
         icon.contentMode = .scaleAspectFit
         return icon
     }()
-    
+
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,7 +58,7 @@ final class TUUserDetailsInfoCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("Unsupported")
     }
-    
+
     // MARK: - Implementation
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
@@ -78,7 +78,6 @@ final class TUUserDetailsInfoCollectionViewCell: UICollectionViewCell {
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true
         titleContainer.backgroundColor = .cyan
-        
         containerView.addSubviews(titleContainer, valueLabel)
         titleContainer.addSubviews(iconImageView, titleLabel)
     }
@@ -103,14 +102,13 @@ final class TUUserDetailsInfoCollectionViewCell: UICollectionViewCell {
             make.left.bottom.right.equalTo(contentView)
         }
     }
-    
+
     private func setUpLayer() {
         contentView.layer.shadowColor = UIColor.label.cgColor
         contentView.layer.shadowRadius = 4
         contentView.layer.shadowOffset = CGSize(width: -6, height: 6)
         contentView.layer.shadowOpacity = 0.3
     }
-
 
     public func configure(with viewModel: TUUserDetailsInfoCollectionViewCellViewModel) {
         titleLabel.text = viewModel.title

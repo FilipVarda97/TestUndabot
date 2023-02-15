@@ -55,9 +55,8 @@ final class TUUserDetailPhotoCollectionViewCell: UICollectionViewCell {
 
         contentView.addSubview(containerView)
         containerView.addSubview(avatarImageView)
-        
     }
-    
+
     private func setUpConstraints() {
         containerView.snp.makeConstraints { make in
             make.centerX.centerY.equalToSuperview()

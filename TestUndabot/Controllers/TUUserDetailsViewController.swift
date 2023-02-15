@@ -12,7 +12,7 @@ import SnapKit
 final class TUUserDetailsViewController: UIViewController {
     private let userDetailsView: TUUserDetailView
     private let viewModel: TUUserDetailsViewModel
-    
+
     // MARK: - Init
     init(viewModel: TUUserDetailsViewModel) {
         self.viewModel = viewModel
@@ -20,11 +20,11 @@ final class TUUserDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         self.userDetailsView.delegate = self
     }
-    
+
     required init(coder: NSCoder) {
         fatalError("Unsupported")
     }
-    
+
     // MARK: - Implementation
     override func viewDidLoad() {
         super.viewDidLoad()

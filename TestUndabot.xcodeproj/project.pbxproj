@@ -305,6 +305,7 @@
 				7D5FA583299A659D002B5459 /* Frameworks */,
 				7D5FA584299A659D002B5459 /* Resources */,
 				57F9256A0847EABD27842A6C /* [CP] Embed Pods Frameworks */,
+				7D8A3485299D512900886588 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -399,6 +400,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestUndabot/Pods-TestUndabot-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7D8A3485299D512900886588 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
