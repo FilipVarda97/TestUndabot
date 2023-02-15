@@ -30,6 +30,7 @@ final class TURepositoryListView: UIView {
         table.register(TURepositoryListTableViewCell.self,
                        forCellReuseIdentifier: TURepositoryListTableViewCell.identifier)
         table.keyboardDismissMode = .onDrag
+        table.separatorStyle = .none
         return table
     }()
     private let spinner: UIActivityIndicatorView = {
