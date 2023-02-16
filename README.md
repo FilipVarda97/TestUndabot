@@ -21,4 +21,5 @@ This projects uses Cocoapods. Pods used:
 - SwiftLint
 - SnapKit
 
-In TUUserDetailPhotoCollectionViewCellViewModel.swift file there is note left for reviewer.
+There are two notes in project left for reviewer.
+One in TUUserDetailPhotoCollectionViewCellViewModel.swift file and another in TURepositroyListViewViewModel.swift file.
