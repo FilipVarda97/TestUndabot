@@ -15,7 +15,7 @@ final class TURepositoryDetailUrlsCollectionViewCell: UICollectionViewCell {
     private let containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemCyan.withAlphaComponent(0.4)
+        view.backgroundColor = .cyan.withAlphaComponent(0.4)
         return view
     }()
     private let titleLabel: UILabel = {

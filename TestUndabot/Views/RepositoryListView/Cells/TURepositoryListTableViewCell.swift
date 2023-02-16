@@ -108,7 +108,7 @@ class TURepositoryListTableViewCell: UITableViewCell {
     }
 
     private func setUpConstraints() {
-        containerView.backgroundColor = .systemCyan.withAlphaComponent(0.4)
+        containerView.backgroundColor = .cyan.withAlphaComponent(0.4)
         containerView.layer.cornerRadius = 20
         containerView.clipsToBounds = true
         containerView.snp.makeConstraints { make in
