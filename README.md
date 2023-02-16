@@ -1,0 +1,24 @@
+# Undabot Git App app writen in Swift
+----------------------------------------------------------------------
+## Features by screens
+REPOSITORIES SCREEN:
+- search for a repository
+- sort search result (stars, forks, last update)
+
+REPOSITORY DETAILS:
+- present repository details such as last update or created at
+- open user/owner details
+- open more details of repository in Safari
+
+USER/OWNER DETAILS:
+- presents user details such as name, bio or location
+- open more details of user in Safari
+
+----------------------------------------------------------------------
+## Notes
+This projects uses Cocoapods. Pods used:
+- Kingfisher
+- SwiftLint
+- SnapKit
+
+In TUUserDetailPhotoCollectionViewCellViewModel.swift file there is note left for reviewer.
