@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 /// A cell for TURepositoryDetailsView. Holds value titles and cooresponding values.
 final class TURepositoryDetailInfoCollectionViewCell: UICollectionViewCell {

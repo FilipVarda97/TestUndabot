@@ -16,6 +16,7 @@ final class TURepositoryDetailDatesCollectionViewCell: UICollectionViewCell {
     private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBlue
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     private let iconImageView: UIImageView = {
@@ -23,16 +24,19 @@ final class TURepositoryDetailDatesCollectionViewCell: UICollectionViewCell {
         imageView.image = UIImage(systemName: "calendar.badge.clock")?.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .black
         imageView.contentMode = .scaleToFill
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     private let valueLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 

@@ -159,6 +159,7 @@ class TURepositoryListTableViewCell: UITableViewCell {
         numberOfStarsLabel.text = viewModel.starsCountText
 
         let placeholder = UIImage(systemName: "person.fill")
+        authorAvatarImageView.kf.indicatorType = .activity
         authorAvatarImageView.kf.setImage(with: viewModel.avatarURL,
                                           placeholder: placeholder,
                                           options: [.transition(.flipFromLeft(0.2))])

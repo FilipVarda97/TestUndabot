@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Kingfisher
 import SnapKit
 
 /// A cell for TURepositoryDetailsView. Presents user data and
@@ -64,11 +65,6 @@ final class TURepositoryDetailUserCollectionViewCell: UICollectionViewCell {
         ownerImageView.image = nil
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setUpLayer()
-    }
-
     private func setUpViews() {
         contentView.addSubview(containerView)
         containerView.addSubviews(ownerImageView,
@@ -106,7 +102,11 @@ final class TURepositoryDetailUserCollectionViewCell: UICollectionViewCell {
     }
 
     public func configure(with viewModel: TURepositoryDetailUserCollectionViewCellViewModel) {
-        ownerImageView.kf.setImage(with: viewModel.imageUrl)
+        let placeholder = UIImage(systemName: "person.fill")
+        ownerImageView.kf.indicatorType = .activity
+        ownerImageView.kf.setImage(with: viewModel.imageUrl,
+                                          placeholder: placeholder,
+                                          options: [.transition(.flipFromLeft(0.2))])
         usernameLabel.text = viewModel.username
     }
 }

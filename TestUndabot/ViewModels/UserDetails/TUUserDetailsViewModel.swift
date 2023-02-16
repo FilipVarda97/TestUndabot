@@ -23,13 +23,18 @@ final class TUUserDetailsViewModel: NSObject {
         case userGitUrl(viewModel: TUUserDetailsGitCollectionViewCellViewModel)
     }
 
-    weak var delegate: TUUserDetailsViewModelDelegate?
     public var sections: [SectionType] = []
     private var userUrl: URL?
 
     private var user: TUUser? {
         didSet {
             setUpSections()
+        }
+    }
+
+    weak var delegate: TUUserDetailsViewModelDelegate? {
+        didSet {
+            fetchUser()
         }
     }
 
@@ -42,7 +47,6 @@ final class TUUserDetailsViewModel: NSObject {
     convenience init(userUrl: URL) {
         self.init()
         self.userUrl = userUrl
-        fetchUser()
     }
 
     // MARK: - Implementation

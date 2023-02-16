@@ -55,8 +55,7 @@ final class TUUserDetailView: UIView {
             return
         }
         spinner.snp.makeConstraints { make in
-            make.width.height.equalTo(100)
-            make.center.equalTo(self)
+            make.centerY.centerX.equalToSuperview()
         }
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -75,10 +74,10 @@ final class TUUserDetailView: UIView {
                                 forCellWithReuseIdentifier: TUUserDetailsInfoCollectionViewCell.identifier)
         collectionView.register(TUUserDetailsGitCollectionViewCell.self,
                                 forCellWithReuseIdentifier: TUUserDetailsGitCollectionViewCell.identifier)
-        collectionView.delegate = viewModel
-        collectionView.dataSource = viewModel
         collectionView.isHidden = true
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.delegate = viewModel
+        collectionView.dataSource = viewModel
         return collectionView
     }
 
@@ -97,8 +96,8 @@ final class TUUserDetailView: UIView {
 // MARK: - TUUserDetailsViewModelDelegate
 extension TUUserDetailView: TUUserDetailsViewModelDelegate {
     func startLoading() {
-        collectionView?.backgroundView = nil
         spinner.startAnimating()
+        collectionView?.backgroundView = nil
     }
 
     func didLoadUser() {

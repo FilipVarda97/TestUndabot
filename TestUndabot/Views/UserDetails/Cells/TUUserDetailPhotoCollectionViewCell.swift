@@ -21,8 +21,17 @@ final class TUUserDetailPhotoCollectionViewCell: UICollectionViewCell {
     private let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "person.fill")?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = .black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    private let spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView()
+        spinner.style = .large
+        spinner.hidesWhenStopped = true
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
     }()
 
     // MARK: - Init
@@ -48,13 +57,18 @@ final class TUUserDetailPhotoCollectionViewCell: UICollectionViewCell {
         setUpLayer()
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setUpLayer()
+    }
+
     private func setUpViews() {
         avatarImageView.contentMode = .scaleAspectFill
         avatarImageView.clipsToBounds = true
         containerView.clipsToBounds = true
 
         contentView.addSubview(containerView)
-        containerView.addSubview(avatarImageView)
+        containerView.addSubviews(avatarImageView, spinner)
     }
 
     private func setUpConstraints() {
@@ -68,11 +82,12 @@ final class TUUserDetailPhotoCollectionViewCell: UICollectionViewCell {
             make.height.equalToSuperview().inset(10)
             make.width.equalTo(avatarImageView.snp.height)
         }
+        spinner.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+        }
     }
 
     private func setUpLayer() {
-        containerView.layer.cornerRadius = containerView.frame.height / 2
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
         contentView.layer.shadowColor = UIColor.label.cgColor
         contentView.layer.shadowRadius = 4
         contentView.layer.shadowOffset = CGSize(width: -8, height: 8)
@@ -80,12 +95,13 @@ final class TUUserDetailPhotoCollectionViewCell: UICollectionViewCell {
     }
 
     public func configure(with viewModel: TUUserDetailPhotoCollectionViewCellViewModel) {
+        spinner.startAnimating()
         viewModel.fetchImage { [weak self] result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
                     self?.avatarImageView.image = UIImage(data: data)
-                    self?.setUpLayer()
+                    self?.spinner.stopAnimating()
                 }
             case .failure(let error):
                 print(error)
