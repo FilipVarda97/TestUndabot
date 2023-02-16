@@ -17,6 +17,7 @@ struct TURepository: Codable {
     let repositoryUrl: String
     let updatedAt: String
     let stargazersCount: Int
+    let createdAt: String
 
     enum CodingKeys: String, CodingKey {
         case id, name
@@ -24,8 +25,9 @@ struct TURepository: Codable {
         case watchersCount = "watchers_count"
         case forksCount = "forks_count"
         case openIssuesCount = "open_issues_count"
-        case repositoryUrl = "url"
+        case repositoryUrl = "html_url"
         case updatedAt = "updated_at"
         case stargazersCount = "stargazers_count"
+        case createdAt = "created_at"
     }
 }

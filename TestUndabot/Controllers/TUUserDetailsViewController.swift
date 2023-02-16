@@ -8,7 +8,7 @@
 import Foundation
 import SnapKit
 
-/// This controller presents TUUserDetailView.
+/// This controller presents TUUserDetailView and opens Safari.
 final class TUUserDetailsViewController: UIViewController {
     private let userDetailsView: TUUserDetailView
     private let viewModel: TUUserDetailsViewModel

@@ -31,13 +31,15 @@ final class TUSearchRepoListViewController: UIViewController {
 
 // MARK: - TURepositoryListViewDelegate
 extension TUSearchRepoListViewController: TURepositoryListViewDelegate {
-    func repositoryListView(_ listView: TURepositoryListView, didSelectUserWith url: String) {
+    func repositoryListView(_ listView: TURepositoryListView, didSelectUserWith url: URL) {
         let viewModel = TUUserDetailsViewModel(userUrl: url)
         let vc = TUUserDetailsViewController(viewModel: viewModel)
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    func repositoryListView(_ listView: TURepositoryListView, didSelectRepositoryWith url: String) {
-        // TODO: Open repo details
+    func repositoryListView(_ listView: TURepositoryListView, didSelectRepository repository: TURepository) {
+        let viewModel = TURepositoryDetailsViewModel(repository: repository)
+        let vc = TURepositoryDetailsViewController(viewModel: viewModel)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

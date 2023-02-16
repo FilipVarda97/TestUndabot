@@ -14,7 +14,8 @@ protocol TUUserDetailsViewModelDelegate: AnyObject {
     func openUserInBrowser(url: URL)
 }
 
-/// ViewModel that builds colletion view's layout and opens a WebView fir the provided user URL.
+/// ViewModel that builds colletion view's layout for presenting UserDetails and opens a URL
+/// in Safari, if provided with one.
 final class TUUserDetailsViewModel: NSObject {
     enum SectionType {
         case photo(viewModel: TUUserDetailPhotoCollectionViewCellViewModel)
@@ -24,7 +25,7 @@ final class TUUserDetailsViewModel: NSObject {
 
     weak var delegate: TUUserDetailsViewModelDelegate?
     public var sections: [SectionType] = []
-    private var userUrl: String?
+    private var userUrl: URL?
 
     private var user: TUUser? {
         didSet {
@@ -38,7 +39,7 @@ final class TUUserDetailsViewModel: NSObject {
         self.userUrl = nil
     }
 
-    convenience init(userUrl: String) {
+    convenience init(userUrl: URL) {
         self.init()
         self.userUrl = userUrl
         fetchUser()
@@ -46,9 +47,8 @@ final class TUUserDetailsViewModel: NSObject {
 
     // MARK: - Implementation
     private func fetchUser() {
-        guard let urlString = userUrl,
-            let url = URL(string: urlString),
-            let tuRequest = TURequest(url: url) else { return }
+        guard let url = userUrl,
+              let tuRequest = TURequest(url: url) else { return }
         delegate?.startLoading()
         TUService.shared.execute(tuRequest, expected: TUUser.self) { [weak self] result  in
             switch result {

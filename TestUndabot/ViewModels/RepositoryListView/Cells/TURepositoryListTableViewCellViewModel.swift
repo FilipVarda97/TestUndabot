@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A viewModel responsible for managing data of TURepositoryListTableViewCell.
 final class TURepositoryListTableViewCellViewModel {
     private let repository: TURepository
 
@@ -23,8 +24,8 @@ final class TURepositoryListTableViewCellViewModel {
     public var authorName: String {
         return repository.ownerUser.name
     }
-    public var userUrl: String {
-        return repository.ownerUser.userUrl
+    public var userUrl: URL? {
+        return URL(string: repository.ownerUser.userUrl)
     }
     public var repositoryUrl: String {
         return repository.repositoryUrl
@@ -40,6 +41,9 @@ final class TURepositoryListTableViewCellViewModel {
     }
     public var issuesCountText: String {
         return "Open issues: \(repository.openIssuesCount)"
+    }
+    public var detailedRepository: TURepository {
+        return repository
     }
 
     // MARK: - Init

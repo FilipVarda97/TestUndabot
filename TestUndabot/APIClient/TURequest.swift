@@ -26,7 +26,7 @@ final class TURequest {
     /// Example: "https://api.github.com/search/repositories?q=tetris&sort=stars&order=desc")
     private var queryParams: [URLQueryItem]
 
-    /// Create urlString from all provided parametars (Example: "https://rickandmortyapi.com/api/character/2?name=rick&status=alive")
+    /// Create urlString from all provided parametars (Example: "https://api.github.com/search/repositories?q=tetris")
     private var urlString: String {
         var string = Constants.baseUrl + "/" + endpoint.rawValue
 
@@ -64,7 +64,7 @@ final class TURequest {
         self.queryParams = queryParams
     }
 
-    /// Create TUrequest with provided URL. Provided URL must contain baseUrl
+    /// Create TURequest with provided URL. Provided URL must contain baseUrl
     /// - Parameter url: URL to parse and create path components and query items
     convenience init?(url: URL) {
         let string = url.absoluteString

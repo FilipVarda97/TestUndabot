@@ -7,10 +7,11 @@
 
 import UIKit
 import Kingfisher
+import SnapKit
 
 protocol TURepositoryListTableViewCellDelegate: AnyObject {
-    func openUserDetailsWith(url: String)
-    func openRepositoryDetails(url: String)
+    func openUserDetailsWith(url: URL)
+    func openRepositoryDetails(repository: TURepository)
 }
 
 /// A table view cell that represents a repository item in a TURepositoryListView.
@@ -170,7 +171,7 @@ class TURepositoryListTableViewCell: UITableViewCell {
     }
 
     @objc private func openRepositoryDetails() {
-        guard let url = viewModel?.repositoryUrl else { return }
-        delegate?.openRepositoryDetails(url: url)
+        guard let repository = viewModel?.detailedRepository else { return }
+        delegate?.openRepositoryDetails(repository: repository)
     }
 }

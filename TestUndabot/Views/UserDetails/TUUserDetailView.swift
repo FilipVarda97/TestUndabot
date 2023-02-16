@@ -78,6 +78,7 @@ final class TUUserDetailView: UIView {
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
         collectionView.isHidden = true
+        collectionView.showsVerticalScrollIndicator = false
         return collectionView
     }
 

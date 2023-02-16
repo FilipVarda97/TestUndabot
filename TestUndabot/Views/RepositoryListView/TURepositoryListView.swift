@@ -9,11 +9,12 @@ import UIKit
 import SnapKit
 
 protocol TURepositoryListViewDelegate: AnyObject {
-    func repositoryListView(_ listView: TURepositoryListView, didSelectUserWith url: String)
-    func repositoryListView(_ listView: TURepositoryListView, didSelectRepositoryWith url: String)
+    func repositoryListView(_ listView: TURepositoryListView, didSelectUserWith url: URL)
+    func repositoryListView(_ listView: TURepositoryListView, didSelectRepository repository: TURepository)
 }
 
-/// A view holding a table view that presents cells with repository information, and UISearchController with it's ScopeButtons.
+/// A view holding a table view that presents cells with repository information,
+/// and UISearchController with it's ScopeButtons.
 final class TURepositoryListView: UIView {
     private let viewModel = TURepositroyListViewViewModel()
     weak var delegate: TURepositoryListViewDelegate?
@@ -77,12 +78,12 @@ final class TURepositoryListView: UIView {
 
 // MARK: - TURepositroyListViewViewModelDelegate
 extension TURepositoryListView: TURepositroyListViewViewModelDelegate {
-    func openUserDetails(userUrl: String) {
+    func openUserDetails(userUrl: URL) {
         delegate?.repositoryListView(self, didSelectUserWith: userUrl)
     }
 
-    func openRepositoryDetails(repositoryUrl: String) {
-        delegate?.repositoryListView(self, didSelectRepositoryWith: repositoryUrl)
+    func openRepositoryDetails(repository: TURepository) {
+        delegate?.repositoryListView(self, didSelectRepository: repository)
     }
 
     func beginLoadingRepositories() {

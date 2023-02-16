@@ -11,8 +11,8 @@ protocol TURepositroyListViewViewModelDelegate: AnyObject {
     func beginLoadingRepositories()
     func failedToLoadSearchRepositories()
     func finishedLoadingOrSortingRepositories()
-    func openUserDetails(userUrl: String)
-    func openRepositoryDetails(repositoryUrl: String)
+    func openUserDetails(userUrl: URL)
+    func openRepositoryDetails(repository: TURepository)
 }
 
 /// A viewModel that fetches all repositories and searches for them using searchController.
@@ -158,11 +158,11 @@ extension TURepositroyListViewViewModel: UISearchResultsUpdating, UISearchBarDel
 
 // MARK: - TURepositoryListTableViewCellDelegate
 extension TURepositroyListViewViewModel: TURepositoryListTableViewCellDelegate {
-    func openUserDetailsWith(url: String) {
+    func openUserDetailsWith(url: URL) {
         delegate?.openUserDetails(userUrl: url)
     }
 
-    func openRepositoryDetails(url: String) {
-        delegate?.openRepositoryDetails(repositoryUrl: url)
+    func openRepositoryDetails(repository: TURepository) {
+        delegate?.openRepositoryDetails(repository: repository)
     }
 }
