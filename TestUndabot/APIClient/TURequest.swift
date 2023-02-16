@@ -19,7 +19,7 @@ final class TURequest {
     private let endpoint: TUEndpoint
 
     /// Path components contains strings to add to "baseUrl  + enpoint"
-    /// Example: "https://rickandmortyapi.com/api/users/mojombo
+    /// Example: "https://api.github.com/users/mojombo
     private var pathComponents: [String]
 
     /// QueryParams contains name and values of params to add to" baseUrl  + enpoint" or "baseUrl + enpoint + pathComponents"

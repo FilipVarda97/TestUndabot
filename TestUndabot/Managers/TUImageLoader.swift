@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Maaer for laoding images form URL. Caches data as well.
+/// Manager for laoding images form URL. Caches data as well.
 final class TUImageLoader {
     static let shared = TUImageLoader()
     private var dataCache = NSCache<NSString, NSData>()
