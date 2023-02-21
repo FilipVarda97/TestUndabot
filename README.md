@@ -16,6 +16,8 @@ USER/OWNER DETAILS:
 
 ----------------------------------------------------------------------
 ## Notes
+Open iOS Recruitment assignment.pdf to see assigment details.
+
 This projects uses Cocoapods. Pods used:
 - Kingfisher
 - SwiftLint
