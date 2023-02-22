@@ -33,6 +33,7 @@ final class TURepositoryDetailsViewController: UIViewController {
     }
 
     private func setUpViews() {
+        view.backgroundColor = .systemBackground
         view.addSubview(repositoryDetailsView)
         repositoryDetailsView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

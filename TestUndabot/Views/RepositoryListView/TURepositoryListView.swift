@@ -24,6 +24,7 @@ final class TURepositoryListView: UIView {
         searchController.searchBar.placeholder = "Repository name"
         searchController.searchBar.showsScopeBar = true
         searchController.searchBar.scopeButtonTitles = ["Stars", "Forks", "Updated"]
+        searchController.searchBar.backgroundColor = .systemBackground
         return searchController
     }()
     private let tableView: UITableView = {

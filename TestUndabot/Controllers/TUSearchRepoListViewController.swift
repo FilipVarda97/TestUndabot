@@ -22,6 +22,7 @@ final class TUSearchRepoListViewController: UIViewController {
     private func setUpViews() {
         repoListView.delegate = self
         navigationItem.searchController = repoListView.searchController
+        view.backgroundColor = .systemBackground
         view.addSubview(repoListView)
         repoListView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)

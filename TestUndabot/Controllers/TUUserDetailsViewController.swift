@@ -33,6 +33,7 @@ final class TUUserDetailsViewController: UIViewController {
     }
 
     private func setUpViews() {
+        view.backgroundColor = .systemBackground
         view.addSubview(userDetailsView)
         userDetailsView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
