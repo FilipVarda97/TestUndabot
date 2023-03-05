@@ -26,3 +26,5 @@ This projects uses Cocoapods. Pods used:
 
 There are two notes in project left for reviewer.
 One in TUUserDetailPhotoCollectionViewCellViewModel.swift file and another in TURepositroyListViewViewModel.swift file.
+
+This project is also available using Combine. Link: https://github.com/FilipVarda97/TestUndabotCombine
