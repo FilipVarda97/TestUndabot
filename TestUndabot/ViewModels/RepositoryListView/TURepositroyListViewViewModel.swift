@@ -20,6 +20,7 @@ protocol TURepositroyListViewViewModelDelegate: AnyObject {
 final class TURepositroyListViewViewModel: NSObject {
     private var isLoadingSearchRepositories = false
     private var shouldInitialScreenPresent = true
+    private var delayedRequest: DispatchWorkItem?
 
     public weak var delegate: TURepositroyListViewViewModelDelegate?
     private var cellViewModels: [TURepositoryListTableViewCellViewModel] = []
@@ -101,6 +102,14 @@ final class TURepositroyListViewViewModel: NSObject {
         }
         delegate?.finishedLoadingOrSortingRepositories()
     }
+
+    private func fetchRepositoriesWithText(_ text: String, and delay: TimeInterval) {
+        delayedRequest?.cancel()
+        delayedRequest = DispatchWorkItem { [weak self] in
+            self?.fetchRepositories(with: text)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: delayedRequest!)
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -130,11 +139,14 @@ extension TURepositroyListViewViewModel: UITableViewDelegate, UITableViewDataSou
 
 // MARK: - UISearchResultsUpdating, UISearchBarDelegate
 extension TURepositroyListViewViewModel: UISearchResultsUpdating, UISearchBarDelegate {
-    func updateSearchResults(for searchController: UISearchController) {}
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let name = searchController.searchBar.text, !name.isEmpty else { return }
+        fetchRepositoriesWithText(name, and: 0.5)
+    }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let name = searchBar.text, !name.isEmpty else { return }
-        fetchRepositories(with: name)
+        fetchRepositoriesWithText(name, and: 0)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
