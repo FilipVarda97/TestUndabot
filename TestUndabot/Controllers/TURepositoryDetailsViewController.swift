@@ -36,7 +36,8 @@ final class TURepositoryDetailsViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(repositoryDetailsView)
         repositoryDetailsView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.top.left.right.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalToSuperview()
         }
     }
 }
