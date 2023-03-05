@@ -16,8 +16,6 @@ final class TUSearchRepoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Repositories"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
         setUpViews()
     }
 
